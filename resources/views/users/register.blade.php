@@ -10,7 +10,8 @@
                 @csrf
 
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" placeholder="Name">
+                    <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" 
+                        placeholder="Name" required value="{{ old('name') }}">
                     <label for="name">Name</label>
                     @error('name')
                         <div class="invalid-feedback">
@@ -19,7 +20,8 @@
                     @enderror
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email" placeholder="Email">
+                    <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email" 
+                        placeholder="Email" required value="{{ old('email') }}">
                     <label for="email">Email</label>
                     @error('email')
                         <div class="invalid-feedback">
@@ -28,7 +30,8 @@
                     @enderror
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control @error('username') is-invalid @enderror" id="username" name="username" placeholder="Username">
+                    <input type="text" class="form-control @error('username') is-invalid @enderror" id="username" name="username" 
+                        placeholder="Username" required value="{{ old('username') }}">
                     <label for="username">Username</label>
                     @error('username')
                         <div class="invalid-feedback">
@@ -37,7 +40,8 @@
                     @enderror
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="password" class="form-control @error('password') is-invalid @enderror" id="password" name="password" placeholder="Password">
+                    <input type="password" class="form-control @error('password') is-invalid @enderror" id="password" name="password" 
+                        placeholder="Password" required>
                     <label for="password">Password</label>
                     @error('password')
                         <div class="invalid-feedback">
@@ -46,7 +50,8 @@
                     @enderror
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="password" class="form-control" id="password_confirmation" name="password_confirmation" placeholder="Password Confirmation">
+                    <input type="password" class="form-control" id="password_confirmation" name="password_confirmation" 
+                        placeholder="Password Confirmation" required>
                     <label for="password_confirmation">Password Confirmation</label>
                 </div>
                 <button class="w-100 btn btn-md btn-primary" type="submit">Register</button>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rules\Password;
 
@@ -21,6 +22,8 @@ class RegisterController extends Controller
             'password' => ['required', 'confirmed', Password::defaults()]
         ]);
         
-        dd('Registration success!');
+        $validated['password'] = bcrypt($validated['password']);
+        User::create($validated);
+        return redirect('login')->with('registerSuccess', 'Registration successfull! Please login.');
     }
 }
